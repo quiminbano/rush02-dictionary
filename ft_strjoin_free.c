@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countsize.c                                     :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 20:07:17 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/12 20:32:33 by corellan         ###   ########.fr       */
+/*   Created: 2023/07/13 00:20:47 by corellan          #+#    #+#             */
+/*   Updated: 2023/07/13 01:21:26 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-int	ft_countsize(char *str, int *flag)
+char	*ft_strjoin_free(char *s1, char *s2)
 {
-	int		fd;
-	int		ret;
-	int		counter;
-	char	buff[BUFFER_SIZE + 1];
+	int		i;
+	int		l1;
+	int		l2;
+	char	*dest;
 
-	fd = open(str, O_RDONLY);
-	ret = 0;
-	counter = 0;
-	if (fd == -1)
+	dest = NULL;
+	i = 0;
+	l1 = ft_strlen(s1);
+	l2 = ft_strlen(s2);
+	dest = (char *)malloc(sizeof(char) * (l1 + l2 + 1));
+	if (!dest)
+		return (free(s1), NULL);
+	dest[l1 + l2] = '\0';
+	while (i < (l1 + l2))
 	{
-		(*flag) = 1;
-		return (0);
+		if (i < l1)
+			dest[i] = s1[i];
+		else
+			dest[i] = s2[i - l1];
+		i++;
 	}
-	(*flag) = 0;
-	while (ret > 0)
-	{
-		ret = read(fd, buff, BUFFER_SIZE);
-		counter += ret;
-	}
-	close(fd);
-	return (counter);
+	free(s1);
+	return (dest);
 }
