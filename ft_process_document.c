@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 20:07:17 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/13 01:32:52 by corellan         ###   ########.fr       */
+/*   Updated: 2023/07/13 15:22:28 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_process_document(char *str, int *flag, t_rush *rush)
 		fd = open(str, O_RDONLY);
 	if (fd == -1 || str == NULL)
 	{
-		(*flag) = 1;
+		(*flag) = -1;
 		return ;
 	}
 	(*flag) = 0;

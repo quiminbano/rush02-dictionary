@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:21:53 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/13 01:20:31 by corellan         ###   ########.fr       */
+/*   Updated: 2023/07/13 15:21:17 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 static int	main_cont(t_rush *rush)
 {
-	printf("%s\n", rush->document);
+	ft_parce_document(rush);
+	if (!rush->parsed)
+	{
+		write(2, "Error\n", 6);
+		free(rush->name);
+		free(rush->document);
+		return (1);
+	}
 	free(rush->name);
 	free(rush->document);
 	return (0);
@@ -27,7 +34,7 @@ int	main(int argc, char **argv)
 
 	rush.name = NULL;
 	rush.document = NULL;
-	if (argc < 1 || argc > 3)
+	if (argc > 3)
 	{
 		write(2, "Error\n", 6);
 		return (1);
