@@ -6,13 +6,15 @@
 #    By: corellan <corellan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 23:53:03 by corellan          #+#    #+#              #
-#    Updated: 2023/07/13 01:17:07 by corellan         ###   ########.fr        #
+#    Updated: 2023/07/14 18:31:24 by corellan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = rush-02
 
-SRC = main.c ft_strlen.c ft_strdup.c ft_process_document.c ft_strjoin_free.c
+SRC = main.c ft_strlen.c ft_strdup.c ft_process_document.c ft_strjoin_free.c \
+ft_split.c ft_check_arg_number.c ft_strncmp.c ft_parse_document.c \
+ft_free_split.c find_utils.c ft_find_and_print.c ft_parse_line.c ft_putstr.c
 
 OBJ = $(SRC:.c=.o)
 

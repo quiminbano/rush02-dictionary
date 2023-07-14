@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 09:59:49 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/13 13:55:14 by corellan         ###   ########.fr       */
+/*   Updated: 2023/07/14 18:41:40 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_index_after_char(char *str, int pos)
 	int	i;
 
 	i = 0;
-	while ((str[i + pos] == ' ') || (str[i + pos] != ':'))
+	while ((str[i + pos] == ' ') || (str[i + pos] == ':'))
 		i++;
 	return (i + pos);
 }
@@ -71,7 +71,7 @@ static char	*ft_strdup_pos(char *src, int start)
 	return (dest);
 }
 
-char	**ft_parce_line(char *str)
+char	**ft_parse_line(char *str)
 {
 	int		words;
 	char	**split;

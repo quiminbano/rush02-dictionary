@@ -6,18 +6,36 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:21:53 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/13 23:37:45 by corellan         ###   ########.fr       */
+/*   Updated: 2023/07/14 19:35:34 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
+
+static int	main_cont2(t_rush *rush)
+{
+	if (ft_find_and_print(rush))
+	{
+		write(STDERR_FILENO, "Dict Error\n", 11);
+		free(rush->name);
+		free(rush->document);
+		free(rush->number);
+		ft_free_split(rush->parsed);
+		return (1);
+	}
+	free(rush->name);
+	free(rush->document);
+	free(rush->number);
+	ft_free_split(rush->parsed);
+	return (0);
+}
 
 static int	main_cont(t_rush *rush, int argc, char **argv)
 {
 	rush->parsed = NULL;
 	if (ft_check_arg_number(rush, argc, argv))
 	{
-		write(2, "Error\n", 11);
+		write(STDERR_FILENO, "Error\n", 6);
 		free(rush->name);
 		free(rush->document);
 		if (rush->number)
@@ -27,14 +45,13 @@ static int	main_cont(t_rush *rush, int argc, char **argv)
 	ft_parse_document(rush);
 	if (!rush->parsed)
 	{
-		write(2, "Dict Error\n", 11);
+		write(STDERR_FILENO, "Dict Error\n", 11);
 		free(rush->name);
 		free(rush->document);
+		free(rush->number);
 		return (1);
 	}
-	free(rush->name);
-	free(rush->document);
-	return (0);
+	return (main_cont2(rush));
 }
 
 int	main(int argc, char **argv)

@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 23:04:12 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/13 23:46:45 by corellan         ###   ########.fr       */
+/*   Updated: 2023/07/14 18:14:05 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,15 @@ static int	ft_analize_string(char *str)
 	int	i;
 
 	i = 0;
-	
+	while (str[i] >= 8 && str[i] <= 13)
+		i++;
+	if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+		i++;
+	if (i < ft_strlen(str))
+		return (1);
+	return (0);
 }
 
 static void	ft_allocate_number(int *fl, char *buff, t_rush *rush, int ret)
