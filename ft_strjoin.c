@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_and_print.c                                :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/14 18:16:58 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/15 20:45:48 by corellan         ###   ########.fr       */
+/*   Created: 2023/07/15 20:51:53 by corellan          #+#    #+#             */
+/*   Updated: 2023/07/15 20:52:53 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-int	ft_find_and_print(t_rush *rush)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char	**line;
 	int		i;
+	int		l1;
+	int		l2;
+	char	*dest;
 
-	i = 1;
-	line = NULL;
-	rush->index = ft_find_string(rush->parsed, rush->number);
-	if (rush->index == ft_array_len(rush->parsed) || rush->index == -1)
-		return (1);
-	line = ft_parse_line(rush->parsed[rush->index]);
-	if (!line)
-		return (1);
-	while (line[i])
+	dest = NULL;
+	i = 0;
+	l1 = ft_strlen(s1);
+	l2 = ft_strlen(s2);
+	dest = (char *)malloc(sizeof(char) * (l1 + l2 + 1));
+	if (!dest)
+		return (NULL);
+	dest[l1 + l2] = '\0';
+	while (i < (l1 + l2))
 	{
-		ft_putstr(line[i]);
-		if (line[i + 1])
-			ft_putstr(" ");
+		if (i < l1)
+			dest[i] = s1[i];
+		else
+			dest[i] = s2[i - l1];
 		i++;
 	}
-	ft_putstr("\n");
-	ft_free_split(line);
-	return (0);
+	return (dest);
 }

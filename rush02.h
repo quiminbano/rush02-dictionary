@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:22:02 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/14 18:27:59 by corellan         ###   ########.fr       */
+/*   Updated: 2023/07/15 20:57:19 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int		ft_array_len(char **array);
 int		ft_find_and_print(t_rush *rush);
 char	**ft_parse_line(char *str);
 void	ft_putstr(char *str);
+char	*ft_strjoin(char *s1, char *s2);
 
 #endif
