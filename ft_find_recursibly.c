@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 07:02:17 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/16 13:11:45 by corellan         ###   ########.fr       */
+/*   Updated: 2023/07/16 14:12:46 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_add_zeros_print(t_rush *rush, char *number, int len, int zero)
 		free(rush->temp);
 		return (1);
 	}
-	if ((number + zero + 1)[0] != 0 && (number + zero + 1)[0] != 48)
+	if (ft_strlen(number + zero + 1))
 		ft_putstr(" ");
 	free(rush->temp);
 	return (ft_find_recursibly(rush, (number + zero + 1)));
@@ -96,7 +96,7 @@ static int	ft_over_thousand(t_rush *rush, char *number, int len, int reserve)
 	temp = ft_strjoin_free(temp, (number + (len - reserve)));
 	if (!temp)
 		return (1);
-	while (temp[(len - reserve) + zero] == '0')
+	while (temp[1 + zero] == '0')
 		zero++;
 	return (over_thousand_aux(rush, temp, zero));
 }
