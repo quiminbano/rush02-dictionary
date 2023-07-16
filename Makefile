@@ -6,7 +6,7 @@
 #    By: corellan <corellan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 23:53:03 by corellan          #+#    #+#              #
-#    Updated: 2023/07/15 21:36:54 by corellan         ###   ########.fr        #
+#    Updated: 2023/07/16 13:13:57 by corellan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,13 @@ NAME = rush-02
 SRC = main.c ft_strlen.c ft_strdup.c ft_process_document.c ft_strjoin_free.c \
 ft_split.c ft_check_arg_number.c ft_strncmp.c ft_parse_document.c \
 ft_free_split.c find_utils.c ft_find_and_print.c ft_parse_line.c ft_putstr.c \
-ft_strjoin.c
+ft_strjoin.c ft_strndup.c ft_find_recursibly.c ft_find_recursibly2.c
 
 OBJ = $(SRC:.c=.o)
 
 CC = cc
 
-FLAGS = -Wall -Wextra -Werror -fsanitize=address -g -static-libsan
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:21:53 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/14 19:35:34 by corellan         ###   ########.fr       */
+/*   Updated: 2023/07/16 12:26:26 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static int	main_cont2(t_rush *rush)
 {
-	if (ft_find_and_print(rush))
+	rush->flag = 0;
+	if (ft_find_recursibly(rush, rush->number))
 	{
 		write(STDERR_FILENO, "Dict Error\n", 11);
 		free(rush->name);
@@ -27,6 +28,7 @@ static int	main_cont2(t_rush *rush)
 	free(rush->document);
 	free(rush->number);
 	ft_free_split(rush->parsed);
+	ft_putstr("\n");
 	return (0);
 }
 

@@ -6,37 +6,18 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 17:52:24 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/15 21:34:58 by corellan         ###   ########.fr       */
+/*   Updated: 2023/07/16 07:02:00 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-static int	ft_skip_char(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (!str)
-		return (-1);
-	while ((str[i] >= 8 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+')
-		i++;
-	return (i);
-}
-
 static int	ft_initialiaze_numbers(char **numb1, char **numb2, char *needle)
 {
-	int	index;
-
-	index = ft_skip_char(needle);
-	if (index == -1)
-		return (1);
-	(*numb1) = ft_strjoin(needle + index, ":");
+	(*numb1) = ft_strjoin(needle, ":");
 	if (!(*numb1))
 		return (1);
-	(*numb2) = ft_strjoin(needle + index, " ");
+	(*numb2) = ft_strjoin(needle, " ");
 	if (!(*numb2))
 	{
 		free((*numb1));

@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_find_recursibly2.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/14 18:25:15 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/16 12:59:00 by corellan         ###   ########.fr       */
+/*   Created: 2023/07/16 12:55:08 by corellan          #+#    #+#             */
+/*   Updated: 2023/07/16 12:55:25 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-static void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
+int	ft_first_entry_validation(t_rush *rush, int reserve)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	rush->temp = ft_strdup("1");
+	if (!rush->temp)
+		return (1);
+	while (i < reserve)
 	{
-		ft_putchar(str[i]);
+		rush->temp = ft_strjoin_free(rush->temp, "0");
+		if (!rush->temp)
+			return (1);
 		i++;
 	}
+	if (ft_find_string(rush->parsed, rush->temp) == ft_array_len(rush->parsed))
+	{
+		free(rush->temp);
+		return (1);
+	}
+	free(rush->temp);
+	return (0);
 }

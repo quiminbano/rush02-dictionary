@@ -6,20 +6,20 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 18:16:58 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/15 20:45:48 by corellan         ###   ########.fr       */
+/*   Updated: 2023/07/16 00:41:44 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-int	ft_find_and_print(t_rush *rush)
+int	ft_find_and_print(t_rush *rush, char *number)
 {
 	char	**line;
 	int		i;
 
 	i = 1;
 	line = NULL;
-	rush->index = ft_find_string(rush->parsed, rush->number);
+	rush->index = ft_find_string(rush->parsed, number);
 	if (rush->index == ft_array_len(rush->parsed) || rush->index == -1)
 		return (1);
 	line = ft_parse_line(rush->parsed[rush->index]);
@@ -32,7 +32,6 @@ int	ft_find_and_print(t_rush *rush)
 			ft_putstr(" ");
 		i++;
 	}
-	ft_putstr("\n");
 	ft_free_split(line);
 	return (0);
 }

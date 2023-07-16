@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/14 18:25:15 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/16 12:59:00 by corellan         ###   ########.fr       */
+/*   Created: 2023/07/16 00:26:47 by corellan          #+#    #+#             */
+/*   Updated: 2023/07/16 07:15:32 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-static void	ft_putchar(char c)
+char	*ft_strndup(char *str, unsigned int n)
 {
-	write(1, &c, 1);
-}
+	char			*dest;
+	unsigned int	i;
 
-void	ft_putstr(char *str)
-{
-	int	i;
-
+	dest = NULL;
 	i = 0;
-	while (str[i])
+	if (n == 0)
+		return (dest);
+	dest = (char *)malloc(sizeof(char) * (n + 1));
+	if (!dest)
+		return (NULL);
+	dest[n] = '\0';
+	while (i < n)
 	{
-		ft_putchar(str[i]);
+		dest[i] = str[i];
 		i++;
 	}
+	return (dest);
 }
