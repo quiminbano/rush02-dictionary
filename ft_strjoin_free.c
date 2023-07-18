@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 00:20:47 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/13 01:21:26 by corellan         ###   ########.fr       */
+/*   Created: 2023/07/18 09:49:59 by corellan          #+#    #+#             */
+/*   Updated: 2023/07/18 09:50:01 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

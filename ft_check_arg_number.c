@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_arg_number.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 23:04:12 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/16 12:30:57 by corellan         ###   ########.fr       */
+/*   Created: 2023/07/18 09:52:32 by corellan          #+#    #+#             */
+/*   Updated: 2023/07/18 09:52:34 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

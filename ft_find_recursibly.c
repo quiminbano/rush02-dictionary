@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_recursibly.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/16 07:02:17 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/16 14:12:46 by corellan         ###   ########.fr       */
+/*   Created: 2023/07/18 09:52:10 by corellan          #+#    #+#             */
+/*   Updated: 2023/07/18 09:52:12 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

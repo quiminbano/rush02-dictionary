@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_process_document.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: corellan <corellan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 20:07:17 by corellan          #+#    #+#             */
-/*   Updated: 2023/07/13 15:22:28 by corellan         ###   ########.fr       */
+/*   Created: 2023/07/18 09:45:42 by corellan          #+#    #+#             */
+/*   Updated: 2023/07/18 09:49:05 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
